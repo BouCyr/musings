@@ -1,0 +1,94 @@
+:root {
+  --ink: #1a1a1a;
+  --muted: #6b6b6b;
+  --accent: #3a5a8a;
+  --rule: #e6e6e6;
+  --bg: #fbfaf7;
+  --max: 42rem;
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 18px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Georgia, "Iowan Old Style", "Times New Roman", serif;
+  line-height: 1.6;
+}
+
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 4rem 1.25rem 6rem;
+}
+
+a { color: var(--accent); }
+a:hover { text-decoration: none; }
+
+header.site {
+  margin-bottom: 3rem;
+}
+
+header.site h1 {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+header.site p.tagline {
+  color: var(--muted);
+  font-style: italic;
+  margin: 0;
+}
+
+nav.back {
+  font-size: 0.85rem;
+  margin-bottom: 2.5rem;
+}
+
+ul.index {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.index li {
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+ul.index li:last-child { border-bottom: 1px solid var(--rule); }
+
+ul.index a.title {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+ul.index p.summary {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+article h1 {
+  font-size: 1.9rem;
+  margin: 0 0 0.25rem;
+  letter-spacing: -0.01em;
+}
+
+article .meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+footer.site {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.8rem;
+}
