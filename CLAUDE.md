@@ -37,9 +37,9 @@ The generator reads each article as follows:
 - **Date / ordering** &mdash; the first `<p class="meta">`, parsed as
   `%d %B %Y` (e.g. `23 June 2026`). Listings are sorted most-recent-first;
   unparseable/missing dates sort last.
-- **Published** &mdash; the article appears on `index.html` only if it contains
-  `<meta name="status" content="published">`. Without it, the article still
-  appears on `staging.html` but is treated as a draft.
+- **Published** &mdash; the article appears on `index.html` only if its `<body>`
+  tag carries `data-status="published"`. Without it (e.g. a plain `<body>`), the
+  article still appears on `staging.html` but is treated as a draft.
 
 Article pages link back to the index and to the stylesheet with relative paths
 (`../index.html`, `../assets/style.css`); the generated listings use

@@ -5,7 +5,7 @@ For each article the generator extracts:
   - the title   -> the first <h1>
   - the summary -> the first <p> whose class list contains "summary"
   - the date    -> the first <p class="meta"> (used for ordering)
-  - published   -> presence of <meta name="status" content="published">
+  - published   -> the <body> tag carries data-status="published"
 
 index.html   lists only published articles.
 staging.html is a faithful copy of index.html that lists every article present,
@@ -43,11 +43,7 @@ class ArticleParser(HTMLParser):
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
 
-        if (
-            tag == "meta"
-            and attrs.get("name") == "status"
-            and attrs.get("content") == "published"
-        ):
+        if tag == "body" and attrs.get("data-status") == "published":
             self.published = True
 
         # While capturing an element's text, just track nesting depth so we
